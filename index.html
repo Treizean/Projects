@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Treizean Hall - Projects</title>
+    <title>Treizean Hall</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            display: flex;
-            margin: 0;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         nav {
-            width: 200px;
+            width: 100%;
             background-color: #f4f4f4;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            height: 100vh;
-            position: fixed;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
         }
 
         nav a {
-            display: block;
-            margin: 10px 0;
             color: #333;
             text-decoration: none;
             font-size: 18px;
@@ -33,91 +33,18 @@
         nav a:hover {
             color: #007BFF;
         }
-
-        main {
-            margin-left: 220px;
-            padding: 20px;
-            flex: 1;
-        }
-
-        header, footer {
-            text-align: center;
-        }
-
-        .details {
-            display: none;
-        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#homepage">Homepage</a>
-        <a href="#resume">Resume</a>
-        <a href="#project">Projects</a>
+        <a href="homepage.html">Homepage</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
     </nav>
-
     <main>
-        <header>
-            <h1>Treizean Hall's Projects</h1>
-            <p>Welcome to my interactive portfolio! Check out my projects below:</p>
-        </header>
-
-        <section id="homepage">
-            <h2>Welcome to My Homepage</h2>
-            <p>This is an overview of my portfolio and achievements. Use the navigation links on the left to explore further.</p>
-        </section>
-
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>Here you will find a summary of my professional experience, education, and skills.</p>
-        </section>
-
-        <section id="project">
-            <section class="project" id="project1">
-                <h2>Project 1: Impact of Age on Crime Victimization</h2>
-                <p>This is a closer look at the CMPD Dataset using a comparison of age on crime victimization</p>
-                <button onclick="showDetails(1)">Details</button>
-                <div class="details" id="details1">
-                    <p>Detailed description: Different age groups experience different types of crimes. Young people often face violent crimes, while older people are more likely to experience property crimes. These patterns can vary based on factors like location and income. Understanding these crime patterns is crucial for creating better strategies to prevent crime, support victims, and address the significant impact of fear on community behavior and lifestyle choices. </p>
-                    <a href="https://github.com/Treizean/Impact-of-Age-on-Crime-Victimization/tree/main" target="_blank">View on GitHub</a>
-                </div>
-            </section>
-
-            <section class="project" id="project2">
-                <h2>Project 2: Classification Model on Yahoo Finance Dataset</h2>
-                <p>This is a classification model on the stock market to predict whether a stock’s price will go up or down (or stay the same) based on historical data.</p>
-                <button onclick="showDetails(2)">Details</button>
-                <div class="details" id="details2">
-                    <p>Detailed description: This project aims to build a machine-learning classification model to predict stock market movements (e.g., whether a stock’s price will go up or down). It involves collecting historical stock data (prices, volumes, and technical indicators), performing feature engineering (e.g., calculating moving averages, RSI), and preprocessing the data for modeling. A classification algorithm (e.g., Random Forest, XGBoost) is then trained to predict future price changes based on past patterns. The model's performance is evaluated using metrics like accuracy and precision, followed by backtesting to simulate real-world conditions. The goal is to create a predictive model that aids in stock market decision-making.</p>
-                    <a href="https://github.com/Treizean/Data-Science-Approach-To-The-Stock-Market" target="_blank">View on GitHub</a>
-                </div>
-            </section>
-
-            <section class="project" id="project3">
-                <h2>Project 3: Predicting Social Media Engagement: A Regression Analysis on Likes and Retweets</h2>
-                <p>This analysis explores the use of linear regression to predict social media engagement metrics, focusing on likes and retweets, using sentiment, platform, and timing data.</p>
-                <button onclick="showDetails(3)">Details</button>
-                <div class="details" id="details3">
-                    <p>This project investigates social media engagement factors by applying regression analysis to predict likes and retweets on posts. Using a dataset of social media posts with information on sentiment, platform (e.g., Twitter, Instagram), post timing, and associated hashtags, we analyzed the impact of these features on user engagement metrics. Linear regression models were built to identify trends and patterns in how different content attributes contribute to higher engagement levels. The model explained around 26% of the variance for both likes and retweets, indicating that while platform and sentiment play a role, other unobserved factors likely influence engagement outcomes. These findings suggest potential areas for model enhancement, including the incorporation of additional features, such as follower demographics or content quality indicators, to improve the predictive accuracy of social media engagement.</p>
-                    <a href="https://github.com/Treizean/-Predicting-Social-Media-Engagement-A-Regression-Analysis-on-Likes-and-Retweets" target="_blank">View on GitHub</a>
-                </div>
-            </section>
-        </section>
-
-        <footer>
-            <p>Connect with me on <a href="https://www.linkedin.com/in/treizean-hall-b75406246/" target="_blank">LinkedIn</a></p>
-        </footer>
+        <h1>Welcome to Treizean Hall's Portfolio</h1>
+        <p>Use the navigation above to explore different sections of my portfolio.</p>
     </main>
-
-    <script>
-        function showDetails(id) {
-            const details = document.getElementById(`details${id}`);
-            if (details.style.display === "block") {
-                details.style.display = "none";
-            } else {
-                details.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
+
