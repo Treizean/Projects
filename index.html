@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Projects - Treizean Hall</title>
+    <title>Portfolio Navigation</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -34,26 +34,17 @@
             color: #007BFF;
         }
 
-        .project {
-            margin: 20px auto;
+        main {
+            padding: 20px;
+        }
+
+        .section {
             max-width: 800px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
         }
 
-        .project h2 {
-            margin-top: 0;
-        }
-
-        .project a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .project a:hover {
-            text-decoration: underline;
+        h1 {
+            text-align: center;
         }
     </style>
 </head>
@@ -63,7 +54,21 @@
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
     </nav>
-    <main>
+
+    <!-- Placeholder for homepage -->
+    <main id="homepage-template" class="section">
+        <h1>Welcome to Treizean Hall's Portfolio</h1>
+        <p>Explore my achievements, professional journey, and portfolio of work. Use the navigation menu to learn more.</p>
+    </main>
+
+    <!-- Placeholder for resume -->
+    <main id="resume-template" class="section">
+        <h1>Resume</h1>
+        <p>This page will detail my professional experience, education, skills, and achievements. Check back soon for more updates!</p>
+    </main>
+
+    <!-- Populated projects page -->
+    <main id="projects" class="section">
         <h1>Projects</h1>
         <section class="project">
             <h2>Project 1: Impact of Age on Crime Victimization</h2>
@@ -88,4 +93,5 @@
     </main>
 </body>
 </html>
+
 
