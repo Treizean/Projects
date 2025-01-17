@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome - Treizean Hall</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            color: #333;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        #popup select {
+            margin: 10px 0;
+            padding: 5px;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        function showPopup() {
+            const hasVisited = localStorage.getItem('hasVisited');
+            if (!hasVisited) {
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('popup-overlay').style.display = 'block';
+            }
+        }
+
+        function closePopup() {
+            const userType = document.getElementById('userType').value;
+            if (userType !== 'none') {
+                saveUserType(userType);
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('popup-overlay').style.display = 'none';
+                localStorage.setItem('hasVisited', 'true');
+            } else {
+                alert('Please select an option.');
+            }
+        }
+
+        function saveUserType(userType) {
+            const data = `User Type: ${userType}\n`;
+            const blob = new Blob([data], { type: 'text/plain' });
+            const anchor = document.createElement('a');
+            anchor.href = URL.createObjectURL(blob);
+            anchor.download = 'user_data.txt';
+            anchor.click();
+        }
+
+        window.onload = showPopup;
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="https://treizean.github.io/Treizean-Projects/homepage.html">Homepage</a>
+        <a href="https://treizean.github.io/Treizean-Projects/resume.html">Resume</a>
+        <a href="https://treizean.github.io/Treizean-Projects/projects.html">Projects</a>
+        <a href="https://treizean.github.io/Treizean-Projects/about.html">About Me</a>
+        <a href="https://treizean.github.io/Treizean-Projects/athletics.html">Athletic Accomplishments</a>
+    </nav>
+
+    <div id="popup-overlay" onclick="closePopup()"></div>
+
+    <div id="popup">
+        <h2>Welcome to My Portfolio!</h2>
+        <p>What brings you here today?</p>
+        <select id="userType">
+            <option value="none">Select an option</option>
+            <option value="Employer">Employer</option>
+            <option value="Recruiter">Recruiter</option>
+            <option value="Other">Other</option>
+        </select>
+        <br>
+        <button onclick="closePopup()">Submit</button>
+    </div>
+
+    <main>
+        <h1>Welcome to Treizean Hall's Portfolio</h1>
+        <p>Explore my projects, learn more about my journey, and discover how I can contribute to your next big idea. Dive into the navigation links above to start your exploration!</p>
+        <a href="https://treizean.github.io/Treizean-Projects/projects.html" class="btn">View My Projects</a>
+    </main>
+</body>
+</html>
